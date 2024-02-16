@@ -52,6 +52,7 @@ type UpdateCommentResponse struct {
 	UpdatedAt *time.Time `json:"updated_at"`
 }
 
+// Validasi sebelum create comment
 func (u *Comment) BeforeCreate(tx *gorm.DB) (err error) {
 	_, errCreate := govalidator.ValidateStruct(u)
 	if errCreate != nil {
