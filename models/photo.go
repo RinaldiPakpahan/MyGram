@@ -66,6 +66,7 @@ type PhotoCommentResponse struct {
 	UserId   uint   `json:"user_id"`
 }
 
+// Validasi sebelum create Photo
 func (u *Photo) BeforeCreate(tx *gorm.DB) (err error) {
 	_, errCreate := govalidator.ValidateStruct(u)
 	if errCreate != nil {
