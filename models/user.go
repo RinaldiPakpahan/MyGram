@@ -69,6 +69,7 @@ type UserSocialMediaResponse struct {
 	ProfileImageUrl string `json:"profile_image_url"`
 }
 
+// Validasi sebelum create User
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 	_, errCreate := govalidator.ValidateStruct(u)
 	if errCreate != nil {
