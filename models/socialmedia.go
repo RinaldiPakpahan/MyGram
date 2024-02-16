@@ -51,6 +51,7 @@ type UpdateSocialMediaResponse struct {
 	UpdatedAt      *time.Time `json:"updated_at"`
 }
 
+// Validasi sebelum create social media
 func (u *SocialMedia) BeforeCreate(tx *gorm.DB) (err error) {
 	_, errCreate := govalidator.ValidateStruct(u)
 	if errCreate != nil {
